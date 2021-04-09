@@ -14,6 +14,7 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="demo-assests/css/util.css">
 	<link rel="stylesheet" type="text/css" href="demo-assests/css/main.css">
+	<link rel="stylesheet" href="css/otp.css"> 
 	<!--===============================================================================================-->
 
 	<!-- Bootstrap CSS -->
@@ -23,13 +24,28 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 	<!-- Title -->
 	<title>पढ़HIGH </title>
-
+	<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
 
 </head>
 
 <body>
 
+	<div class="backdrop1">
 
+		<div class="popup">
+			<span>OTP SENT TO YOUR NUMBER</span>
+			<form>
+				<input placeholder="Enter 6 Digit OTP" type="number" class="otp">
+				<div id="otp">
+					<span style="visibility:hidden;">testing testing</span>
+				</div>
+				<button onclick="verifyOtp(event)">VERIFY</button>
+			</form>
+		</div>
+
+	</div>
+    <div id="recaptcha"></div>
 	<div class="container-contact100">
 
 		<div class="wrap-contact100">
@@ -43,7 +59,7 @@
                 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100 "> Your Name</span>
-					<input class="input100" type="text" name="name" placeholder="Your  name" required>
+					<input class="input100" type="text" name="name" placeholder="Your  name" aria-required="true" aria-invalid="false" required>
 					<span class="focus-input100"></span>
 				</div>
 
@@ -73,10 +89,9 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
+						<button class="contact100-form-btn button">
 							<span>
-								Download
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+								
 								 Proceed
 							</span>
 						</button>
@@ -96,35 +111,9 @@
 	
 
 </body>
+
+
 <script defer src="/higher/main_js/otp.js"></script>
 <script defer src="/higher/main_js/downloadpdf.js"></script>
-<style>
-
-		/* The alert message box */
-		.alert {
-		  padding:10px;
-		  color: white;
-		  margin-bottom: 15px;
-		
-		}
-		/* The close button */
-		.closebtn {
-		  margin-left: 15px;
-		  color: white;
-		  font-weight: bold;
-		  float: right;
-		  font-size: 22px;
-		  line-height: 20px;
-		  cursor: pointer;
-		  transition: 0.3s;
-		}
-		
-		/* When moving the mouse over the close button */
-		.closebtn:hover {
-		  color: black;
-		}
-		
-</style>
-<script src="demo-assests/js/form.js"></script>
 
 </html>
